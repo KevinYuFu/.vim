@@ -14,6 +14,8 @@ nnoremap <C-f> :noh<cr>
 nnoremap <PageUp> 10j
 nnoremap <PageDown> 10k
 
+nnoremap <Tab> ddO
+
 " </KeyBinding> "
 
 " Config Functionality
