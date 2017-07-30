@@ -1,6 +1,5 @@
 
 " <KeyBinding> "
-
 " [Ctrl n] Toggle number line appearance
 nnoremap <C-n> :call NumberToggle()<cr>
 
@@ -16,6 +15,10 @@ nnoremap <PageDown> 10k
 
 " Set tab to clear line and indent
 nnoremap <Tab> ddO
+
+" Block tab in visual mode
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " allow more natural split screen navigation
 nnoremap <C-J> <C-W><C-J>
@@ -33,11 +36,7 @@ set history=100		" increase vim stored history
 set autoread		" Reload files changed outside vim
 set re=1			" Use a non-broken regex engine for syntax highlighting
 set nocompatible	" ward off unexpected things that distro might have made + sanely reset options when re-sourcing .vimrc
-set wildmenu		" Better command-line completion
-set showcmd			" show partial commands in the last line of the screen
-set nomodeline		" Modelines allow insecure options to be set. (Should look into this in future)
-set confirm			" Ask to save unsaved work upon closing
-set visualbell		" Use visual bell instead of beeping when doing something wrong
+set wildmenu		" Better command-line completion set showcmd			" show partial commands in the last line of the screen set nomodeline		" Modelines allow insecure options to be set. (Should look into this in future) set confirm			" Ask to save unsaved work upon closing set visualbell		" Use visual bell instead of beeping when doing something wrong
 " set mouse=a			" enable mouse usage (Lol....)
 
 " set indentation settings
