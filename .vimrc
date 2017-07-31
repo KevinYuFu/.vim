@@ -31,6 +31,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Config Functionality
 syntax enable		" Turn on syntax highlights
+set confirm			" Compt to save before exit
 set hidden			" leave hidden buffers open
 set history=100		" increase vim stored history
 set autoread		" Reload files changed outside vim
