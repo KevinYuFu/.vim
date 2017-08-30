@@ -1,7 +1,35 @@
+" ============================
+" = 	Yu Fu || .vimrc 	 = 
+" ============================
 
-" <KeyBinding> "
-" [Ctrl n] Toggle number line appearance
-nnoremap <C-n> :call NumberToggle()<cr>
+" ------------------------------------------------------------
+" <Vim-plug Plugin Manager>
+
+call plug#begin('~/.vim/plugged')
+
+	Plug 'https://github.com/scrooloose/nerdtree'
+
+call plug#end()
+
+
+
+" ------------------------------------------------------------
+" <NERDTree>
+
+" Remap Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+" Open NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Close vim if the only window left open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+
+" ------------------------------------------------------------
+" <KeyBinding>
 
 " [\rr] resource vimrc
 map <leader>rr :source ~/.vimrc<CR><C-f>
@@ -27,9 +55,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 
-" </KeyBinding> "
 
-" Config Functionality
+" ------------------------------------------------------------
+" <Config Functionality>
+
 syntax enable		" Turn on syntax highlights
 set confirm			" Compt to save before exit
 set hidden			" leave hidden buffers open
@@ -53,24 +82,13 @@ colorscheme elda
 
 " my UI configurations
 set rnu					" relative numberLine
-"set nu					" set absolute numberLine
+set nu					" set absolute numberLine
 set gcr=a:blinkon0		" Disable cursor blink
 set timeoutlen=200	" alter time vim waits for you to complete a sequence of chars
 set hlsearch		" highlight text being searched
 set so=15			" always have space below and abover cursor (set scrolloff=#)
 
 
-" function:
 
-"	Toggle - relative/absolute line number
-function! NumberToggle()
-	if(&nu == 0)
-		"set nornu
-		set nu
-	else
-		set nonu
-		"set rnu
-	endif
-endfunc
-
-
+" ------------------------------------------------------------
+" <Function>
