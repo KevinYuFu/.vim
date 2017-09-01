@@ -1,9 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/c/Users/kevinfu/.vim/colors'
-let g:netrw_dirhist_2='/home/kaizen/.vim/colors'
-let g:netrw_dirhist_3='/home/kaizen/Flow'
-let g:netrw_dirhist_4='/home/yu/gitWS/Python-Flow'
-let g:netrw_dirhist_5='/home/yu/gitWS/dungeonfriends'
-let g:netrw_dirhist_6='/home/yu/gitWS/flow_solver/hints'
-let g:netrw_dirhist_7='/home/yu/gitWS/Python-Flow'
+let g:netrw_dirhist_cnt =0

@@ -118,7 +118,7 @@ call <sid>hi("TabLineSel",    s:gui0B, s:gui01, s:cterm0B, s:cterm01, "none")
 call <sid>hi("Boolean",      s:gui09, "", s:cterm09, "", "")
 call <sid>hi("Character",    s:gui08, "", s:cterm08, "", "")
 call <sid>hi("Comment",      s:gui03, "", s:cterm03, "", "")
-call <sid>hi("Conditional",  s:gui0E, "", s:cterm0E, "", "")
+call <sid>hi("Conditional",  s:gui0E, "", s:cterm07, "", "")
 call <sid>hi("Constant",     s:gui0C, "", s:cterm0C, "", "")
 call <sid>hi("Define",       s:gui0E, "", s:cterm0E, "", "none")
 call <sid>hi("Delimiter",    s:gui0F, "", s:cterm0F, "", "")
@@ -132,7 +132,7 @@ call <sid>hi("Number",       s:gui0C, "", s:cterm0C, "", "")
 call <sid>hi("Operator",     s:gui0A, "", s:cterm0A, "", "none")
 call <sid>hi("PreProc",      s:gui0A, "", s:cterm0A, "", "")
 call <sid>hi("Repeat",       s:gui0A, "", s:cterm0A, "", "")
-call <sid>hi("Special",      s:gui05, "", s:cterm05, "", "")
+call <sid>hi("Special",      s:gui05, "", s:cterm07, "", "")
 call <sid>hi("SpecialChar",  s:gui0F, "", s:cterm0F, "", "")
 call <sid>hi("Statement",    s:gui07, "", s:cterm07, "none", "none")
 call <sid>hi("StorageClass", s:gui05, "", s:cterm05, "", "")
@@ -241,8 +241,8 @@ call <sid>hi("phpConditional",     s:gui0E, "", s:cterm0E, "", "")
 call <sid>hi("phpStatement",       s:gui0E, "", s:cterm0E, "", "")
 
 " Python highlighting
-call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "")
-call <sid>hi("pythonRepeat",    s:gui0E, "", s:cterm0E, "", "")
+call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm07, "", "")
+call <sid>hi("pythonRepeat",    s:gui0E, "", s:cterm07, "", "")
 exe 'hi link pythonInclude Include'
 exe 'hi link pythonStatement Statement'
 exe 'hi link pythonConditional Conditional'
