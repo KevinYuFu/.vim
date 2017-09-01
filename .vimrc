@@ -2,6 +2,12 @@
 " = 	Yu Fu || .vimrc 	 = 
 " ============================
 
+
+" ------------------------------------------------------------
+" <Theme>
+
+ colorscheme Base2Tone_SeaDark
+
 " ------------------------------------------------------------
 " <Vim-plug Plugin Manager>
 
@@ -77,8 +83,6 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuideOdd ctermbg=black			" set custom indent colors (Requires plugin)
 hi IndentGuideOdd ctermbg=darkgrey		" set custom indent colours
 
-" set vim theme
-colorscheme elda
 
 " my UI configurations
 set rnu					" relative numberLine
