@@ -82,6 +82,7 @@ set shiftwidth=4
 let g:indent_guides_auto_colors = 0
 hi IndentGuideOdd ctermbg=black			" set custom indent colors (Requires plugin)
 hi IndentGuideOdd ctermbg=darkgrey		" set custom indent colours
+hi Normal ctermbg=none					" Set ctermbg to none to stop gnome-terminal colour scheme overide
 
 
 " my UI configurations
