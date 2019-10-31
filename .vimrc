@@ -11,6 +11,12 @@
 " ------------------------------------------------------------
 " <Vim-plug Plugin Manager>
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 	Plug 'https://github.com/scrooloose/nerdtree'
@@ -70,6 +76,7 @@ set confirm			" Compt to save before exit
 set hidden			" leave hidden buffers open
 set history=100		" increase vim stored history
 set autoread		" Reload files changed outside vim
+set autoindent		" keep previous line indentation
 set re=1			" Use a non-broken regex engine for syntax highlighting
 set nocompatible	" ward off unexpected things that distro might have made + sanely reset options when re-sourcing .vimrc
 set wildmenu		" Better command-line completion set showcmd			" show partial commands in the last line of the screen set nomodeline		" Modelines allow insecure options to be set. (Should look into this in future) set confirm			" Ask to save unsaved work upon closing set visualbell		" Use visual bell instead of beeping when doing something wrong
