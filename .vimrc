@@ -6,7 +6,7 @@
 " ------------------------------------------------------------
 " <Theme>
 
- colorscheme Base2Tone_SeaDark
+colorscheme Base2Tone_SeaDark
 
 " ------------------------------------------------------------
 " <Vim-plug Plugin Manager>
@@ -20,6 +20,19 @@ endif
 call plug#begin('~/.vim/plugged')
 
 	Plug 'https://github.com/scrooloose/nerdtree'
+	Plug 'https://github.com/scrooloose/nerdtree.git'
+	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-repeat'
+	Plug 'yggdroot/indentline'
+	Plug 'scrooloose/syntastic'
+	Plug 'terryma/vim-multiple-cursors'
+	" Plug 'cocopon/iceberg.vim'		" Nice colour sceme. Will try alter
+	" Plug 'itchyny/lightline.vim' 		" Pick one of the two
+	" Plug 'vim-airline/vim-airline'
+	" Plug 'valloric/youcompleteme'		" Not sure if I want this
+	" Plug 'valloric/youcompleteme' " Might try this later
+	" Plug 'fatih/vim-go' " For when I chose to learn go
 
 call plug#end()
 
@@ -77,6 +90,7 @@ set hidden			" leave hidden buffers open
 set history=100		" increase vim stored history
 set autoread		" Reload files changed outside vim
 set autoindent		" keep previous line indentation
+set visualbell		" turn off bell sound
 set re=1			" Use a non-broken regex engine for syntax highlighting
 set nocompatible	" ward off unexpected things that distro might have made + sanely reset options when re-sourcing .vimrc
 set wildmenu		" Better command-line completion set showcmd			" show partial commands in the last line of the screen set nomodeline		" Modelines allow insecure options to be set. (Should look into this in future) set confirm			" Ask to save unsaved work upon closing set visualbell		" Use visual bell instead of beeping when doing something wrong
@@ -99,6 +113,8 @@ set gcr=a:blinkon0		" Disable cursor blink
 set timeoutlen=200	" alter time vim waits for you to complete a sequence of chars
 set hlsearch		" highlight text being searched
 set so=15			" always have space below and abover cursor (set scrolloff=#)
+set t_Co=256		" Add this to work for GitBash
+set foldlevelstart=1
 
 
 
