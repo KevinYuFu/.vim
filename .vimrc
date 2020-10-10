@@ -19,14 +19,15 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-	Plug 'https://github.com/scrooloose/nerdtree'
+	"Plug 'https://github.com/scrooloose/nerdtree'
 	Plug 'https://github.com/scrooloose/nerdtree.git'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
-	Plug 'tpope/vim-repeat'
-	Plug 'yggdroot/indentline'
-	Plug 'scrooloose/syntastic'
-	Plug 'terryma/vim-multiple-cursors'
+	"Plug 'tpope/vim-repeat'
+	"Plug 'yggdroot/indentline'
+	"Plug 'scrooloose/syntastic'
+	"Plug 'terryma/vim-multiple-cursors'
+	"
 	" Plug 'cocopon/iceberg.vim'		" Nice colour sceme. Will try alter
 	" Plug 'itchyny/lightline.vim' 		" Pick one of the two
 	" Plug 'vim-airline/vim-airline'
@@ -80,6 +81,17 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 
+" ------------------------------------------------------------
+" <Fuzzy Finder>
+" Search down into sub directories
+" Provide tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching fiels when we tab complete
+" Better command-line completion
+set wildmenu
+
+" ------------------------------------------------------------
 
 " ------------------------------------------------------------
 " <Config Functionality>
@@ -87,23 +99,30 @@ nnoremap <C-H> <C-W><C-H>
 syntax enable		" Turn on syntax highlights
 set confirm			" Compt to save before exit
 set hidden			" leave hidden buffers open
+set wildmenu        " Better command-line completion
 set history=100		" increase vim stored history
 set autoread		" Reload files changed outside vim
 set autoindent		" keep previous line indentation
 set visualbell		" turn off bell sound
 set re=1			" Use a non-broken regex engine for syntax highlighting
 set nocompatible	" ward off unexpected things that distro might have made + sanely reset options when re-sourcing .vimrc
-set wildmenu		" Better command-line completion set showcmd			" show partial commands in the last line of the screen set nomodeline		" Modelines allow insecure options to be set. (Should look into this in future) set confirm			" Ask to save unsaved work upon closing set visualbell		" Use visual bell instead of beeping when doing something wrong
+set showcmd			" show partial commands in the last line of the screen
+set nomodeline		" Modelines allow insecure options to be set. (Should look into this in future)
+set confirm			" Ask to save unsaved work upon closing
+set visualbell		" Use visual bell instead of beeping when doing something wrong
 " set mouse=a			" enable mouse usage (Lol....)
 
 " set indentation settings
 filetype indent plugin on	" Attempt to determine the type of a file based on name/content. Allow intelligent auto indenting
+filetype plugin on	" enable vim's feature for file browsing (technically a plugin)
 set tabstop=4			" Set tab size to 4
 set shiftwidth=4
 let g:indent_guides_auto_colors = 0
 hi IndentGuideOdd ctermbg=black			" set custom indent colors (Requires plugin)
 hi IndentGuideOdd ctermbg=darkgrey		" set custom indent colours
 hi Normal ctermbg=none					" Set ctermbg to none to stop gnome-terminal colour scheme overide
+
+let NERDTreeShowHidden=1
 
 
 " my UI configurations
@@ -115,6 +134,8 @@ set hlsearch		" highlight text being searched
 set so=15			" always have space below and abover cursor (set scrolloff=#)
 set t_Co=256		" Add this to work for GitBash
 set foldlevelstart=1
+
+set complete -=i		" There's an issue with ctrl-n completion making it slow
 
 
 
