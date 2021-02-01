@@ -23,9 +23,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'https://github.com/scrooloose/nerdtree.git'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-surround'
+        Plug 'posva/vim-vue'
+        Plug 'cespare/vim-toml'
+        "Plug 'scrooloose/syntastic'
 	"Plug 'tpope/vim-repeat'
 	"Plug 'yggdroot/indentline'
-	"Plug 'scrooloose/syntastic'
 	"Plug 'terryma/vim-multiple-cursors'
 	"
 	" Plug 'cocopon/iceberg.vim'		" Nice colour sceme. Will try alter
@@ -52,6 +54,16 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" ------------------------------------------------------------
+" <Syntastic>
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 
 " ------------------------------------------------------------
@@ -99,7 +111,6 @@ set wildmenu
 syntax enable		" Turn on syntax highlights
 set confirm			" Compt to save before exit
 set hidden			" leave hidden buffers open
-set wildmenu        " Better command-line completion
 set history=100		" increase vim stored history
 set autoread		" Reload files changed outside vim
 set autoindent		" keep previous line indentation
@@ -115,8 +126,7 @@ set visualbell		" Use visual bell instead of beeping when doing something wrong
 " set indentation settings
 filetype indent plugin on	" Attempt to determine the type of a file based on name/content. Allow intelligent auto indenting
 filetype plugin on	" enable vim's feature for file browsing (technically a plugin)
-set tabstop=4			" Set tab size to 4
-set shiftwidth=4
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab " Set tab size to 4 spaces
 let g:indent_guides_auto_colors = 0
 hi IndentGuideOdd ctermbg=black			" set custom indent colors (Requires plugin)
 hi IndentGuideOdd ctermbg=darkgrey		" set custom indent colours
