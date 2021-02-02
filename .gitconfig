@@ -1,0 +1,16 @@
+[user]
+	name = Kevin Fu
+	email = kevin.fu@glu.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	undo = reset HEAD~1
+	lg = log --name-only
+[pull]
+	rebase = true
